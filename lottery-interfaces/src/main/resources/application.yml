@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: root123456
+    url: jdbc:mysql://127.0.0.1:3306/lottery?autoReconnect=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useAffectedRows=true
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:/com/sjft/lottery/mapper/*.xml
+  config-location: classpath:/com/sjft/lottery/config/mybatis-config.xml
+
+dubbo:
+  application:
+    name: lottery
+    version: 1.0.0
+  registry:
+      address: N/A
+  protocol:
+    name: dubbo
+    port: 20880
+  scan:
+    base-packages: com.sjft.lottery.rpc
